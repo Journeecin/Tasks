@@ -1,0 +1,251 @@
+c(11,2,NA)
+x<- c(foo = 11, bar = 2, norf = NA)
+vect <- c(foo = 11, bar = 2, norf = NA)
+vect
+names(vect)
+vect2<- c(11, 2, NA)
+names(vect2)<- c("foo", "bar", "norf")
+identical(vect,vect2)
+vect["bar"]
+vect[c("foo", "bar")]
+my_vector<- x[1:20]
+my_vector<- c(1,20)
+my_vector<- 1:20
+my_vector
+dim(my_vector)
+length(my_vector)
+im(my_vector) <- c(4, 5)
+dim(my_vector) <- c(4, 5)
+dim(my_vector)
+attributes(my_vector)
+my_vector
+class(my_vector)
+my_matrix<- class(my_vector)
+my_matrix<- my_vector
+?matrix()
+?MATRIX
+?matrix
+identical(my_matrix, my_matrix2)
+my_matrix2 <- matrix(1:20, nrow = 4, ncol = 5, byrow = FALSE)
+identical(my_matrix, my_matrix2)
+patients <- c("Bill", "Gina", "Kelly", "Sean")
+cbind(patients, my_matrix)
+my_data <- data.frame(patients, my_matrix)
+my_data
+class(my_data)
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data) <- cnames
+my_data
+==
+'=='
+TRUE==TRUE
+(FALSE == TRUE) == FALSE .
+(FALSE == TRUE) == FALSE
+6=7
+6==7
+6<7
+10<=10
+5!=7
+5!==7
+5!=7
+!5==7
+FALSE & FALSE
+TRUE & c(TRUE, FALSE, FALSE).
+TRUE & c(TRUE, FALSE, FALSE)
+TRUE && c(TRUE, FALSE, FALSE)
+TRUE | c(TRUE, FALSE, FALSE)
+TRUE || c(TRUE, FALSE, FALSE)
+5 > 8 || 6 != 8#
+| && 4 > 3.9
+5 > 8 || 6 != 8 || && 4 > 3.9
+5 > 8 || 6 !=8 | && 4 > 3.9
+5 > 8 || 6 !=8 | 4 > 3.9
+5 > 8 || 6 != 8 && 4 > 3.9
+isTRUE(6 > 4)
+identical('twins', 'twins')
+xor(5 == 6, !FALSE)
+ints <- sample(10)
+inta
+ints
+ints>5
+which(<7)
+ints<7
+which (ints>7)
+any(ints<0)
+any(ints>0)
+all(ints>0)
+sys.date()
+Sys.Date()
+mean(c(2,4,5))
+submit()
+submitx
+submit()x
+submit(x)
+submit(x
+submit(x)
+submit()
+submit(x)
+submit(x
+x
+submit()
+submit(0
+submit()
+boring_function <- function(x) { x
+submit()
+submt()
+x
+skip()
++
+>
+boring_function<- function(x) {x
+>
+skip()
+boring_function('My first function!')
+boring_function
+submit()
+sum()
+length()
+sum()
+length()
+length(10)
+sum(all)
+skip()
+my_mean(c(4,5,10))
+submit()
+submit(10)
+skip()
+remainder(50)
+remainder(5)
+remainder(11,5)
+remainder(divisor = 11, num = 5)
+remainder(4, div = 2)
+args(remainder)
+submit()
+some_function()
+evaluate()
+valuate <- function(func, dat)
+>
+skip(0)
+skip()
+evaluate(c(1.4, 3.6, 7.9, 8.8))
+evaluate(c(1.4, 3.6, 7.9,8.8))
+evaluate(1.4, 3.6, 7.9, 8.8)
+evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+evaluate(function(x){x+1}, 6)
+evaluate(function(x){x[1]}, c(8, 4, 0))
+evaluate(function(x){x[-1]}, c(8, 4, 0))
+?paste
+paste("Programming", "is", "fun!")
+submit("Programming is fun!")
+telegram <- function ("Programming is fun!")
+skip()
+telegram(c("Hello", "world", ",", "how", "are", "we", "today", "?"))
+submit()
+submit(0)
+submit()
+skip()
+mad_libs(place = London, adjustive = "beautiful", noun = "dog")
+mad_libs(place = "London", adjustive = "beautiful", noun = "dog")
+skip()
+"I love R!"
+"I" %p% "love" %p% "R!"
+data(cars)
+?cars
+head(cars)
+plot(cars)
+?plot()
+help(plot)
+plot()
+plot(x,y)
+plot(x = cars$speed, y = cars$dist)
+plot(x = cars$dist, y = cars$speed)
+plot(x = cars$speed, y = cars$dist, xlab = "Speed")
+plot(x = cars$speed, y = cars$dist, ylab = "Stopping Distance")
+plot(x = cars$speed, y = cars$dist, xlab = "Speed", ylab = "Stopping Distance")
+plot(cars, sub = "My Plot Subtitle")
+plot(cars, main = "My Plot")
+plot(cars, sub = "My Plot Subtitle")
+plot(cars, col = 2)
+plot(cars, xlim = c(10, 15))
+plot(cars, pch = 2)
+data(mtcars)
+?boxplot
+boxplot(mpg ~ cyl, data = mtcars)
+hist(mtcars$mpg)
+Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+length(Data)
+Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+Data<− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+setwd('/Users/journeewheeler/Desktop/Evolution/Tasks/Task_02")
+stringsAsFactors
+Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+setwd('/Users/journeewheeler/Desktop/Evolution/Tasks/Task_02'')
+Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+length(Data)
+setwd(‘~/Desktop/Evolution/Evolution/Tasks/Task_02’)
+setwd(~/Desktop/Evolution/Evolution/Tasks/Task_02)
+setwd('~/Desktop/Evolution/Task_02')
+ata <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+Data=read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+Data<- read.csv('http://jonsmitchell.com/data/beren.csv', stringsAsFactors=F)
+write.csv
+length(Data)
+nrow(Data)
+ncol(Data)
+colnames(Data)
+head(Data)
+Data[1,]
+Data[2,]
+Data[1:3,]
+Data[1:3,4]
+Data[1:5, 1:3]
+Feeds<- which (Data[,9]) == 'bottle')
+Feeds<- which (Data[,9])  == 'bottle')
+Feeds<-which(Data[,9])  == 'bottle')
+Feeds<−which(Data[,9] == ‘bottle’)
+Feeds<-which(Data[,9] == ‘bottle’)
+# Feeds<- which(Data[,9] == ‘bottle’)
+Feeds<- which(Data[,9] == ‘bottle’)
+Feeds<- which(Data[,9] == ‘bottle’)
+Feeds <- which(Data[,9] == ‘bottle’)
+Feeds<-which(Data[,9]=='bottle')
+Feeds<-which(Data[,9] == 'bottle')
+Feeds <- which(Data[,9] == 'bottle')
+Feeds <- which (Data[,9] == 'bottle')
+Feeds <- which (Data[,9] == 'bottle')
+Feeds<- which(Data[9] == 'bottle')
+Feeds<- which(Data[,9] == 'bottle')
+berenMilk <− Data [ Feeds , ]
+Feeds <- which(Data[ ,9]) == 'bottle')
+Feeds<-which(Data[,9] == 'bottle')
+berenMilk<- Data[Feeds,]
+head(berenMilk)
+Feeds <− which(Data[,‘event’] == ‘bottle’)
+Feeds<-which(Data[,'event'] == 'bottle')
+Feeds<-which(Data[,'event'] ='bottle')
+Feeds<-which(Data[,'event'] = 'bottle')
+Feeds<-which(Data[,'event'] == 'bottle')
+Feeds<-which(Data[,event] == 'bottle')
+Feeds<-which(Data[,'event'] == 'bottle')
+Feeds<-which(Data[,'event'] == 'bottle')
+Feeds<-which(Data[,'event'] == 'bottle')
+Feeds<- which(Data[,'event'] == 'bottle')
+head(berenMilk)
+Feeds <-which(Data[,'event'] =='bottle'
+Feeds <-which(Data$event == 'bottle')
+Feeds <-which(Data$event=='bottle')
+dayID<- apply(Data,1,function(x)paste(x[1:3],collapse='-'))
+”2019−04−18”)
+”2019−04−18”)
+dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d",origin="2019-04-18")
+dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d", origin="2019-04-18")
+dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d", origin="2019-04-18")
+dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d", origin="2019-04-18")
+dateID<-sapply(dayID,as.Date,format="%Y-%m-%d",origin="2019-04-18")
+Data$age<-dateID[which(Data$event=='birth')]
+head(Data)
+beren2<-Data
+beren3<-beren2[order(beren2$age),]
+write.csv(beren3,'beren_new.csv',quote=F,row.names=FALSE)

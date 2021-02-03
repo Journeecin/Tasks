@@ -1,3 +1,64 @@
+1:20
+pi:10
+15:1
+':'
+?':'
+seq(1,20)
+seq(0,10, by=0.5)
+my_seq(seq(5,10, length=30))
+my_seq<- seq(5,10,length=30)
+length()
+length(30)
+length(my_seq)
+1:length(my_seq)
+seq(along.with+my_seq)
+seq(along.with = my_seq)
+seq_along(my_seq)
+rep(0, times=40)
+rep(c(0,1,2), times=10)
+rep(c(0,1,2), each=10)
+swirl()
+x<-c(44, NA, 5, NA)
+x*3
+y<- rnorm(1000)
+z<- rep(NA, 1000)
+my_data<- sample(c(,y z), 100)
+my_data <- sample(c(y, z), 100)
+is.nA(my_data)
+is.na(my_data)
+my_na<- is.na(my_data)
+my_na
+my_data== Na
+my_data
+my_data == NA
+sum(my_data)
+sum(my_na)
+my_data
+0/0
+Inf-Inf
+x
+x[1:10]
+x[is.na(x)]
+y<- x[!is.na(x)]
+y
+y[y> 0]
+x[x>0]
+x[!is.na(x)&x>0]
+c(x[3,5,7])
+c(x[3:7])
+x[c(3,5,7)]
+x[0])
+(x[0])
+x[0]
+x[3000]
+x[c(-2, -10)]
+x[-c92,10)]
+x[-c(2,10)]
+vect2 <
+<
+vect2 <- c(11,2,NA)
+vect2<- c(foo=11,bar=2,norf=NA)
+(vect2)<- c(foo=11,bar=2,norf=NA)
 c(11,2,NA)
 x<- c(foo = 11, bar = 2, norf = NA)
 vect <- c(foo = 11, bar = 2, norf = NA)
@@ -184,68 +245,7 @@ Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactor
 length(Data)
 setwd(‘~/Desktop/Evolution/Evolution/Tasks/Task_02’)
 setwd(~/Desktop/Evolution/Evolution/Tasks/Task_02)
-setwd('~/Desktop/Evolution/Task_02')
-ata <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
-Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
-Data=read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
-Data <− read.csv(‘http://jonsmitchell.com/data/beren.csv’, stringsAsFactors=F)
+source("/Users/journeewheeler/Documents/Assignment 2.R")
+cd ~/Desktop/Evolution/Tasks
+setwd('~/Desktop/Evolution/Evolution/Tasks/Task_02')
 Data<- read.csv('http://jonsmitchell.com/data/beren.csv', stringsAsFactors=F)
-write.csv
-length(Data)
-nrow(Data)
-ncol(Data)
-colnames(Data)
-head(Data)
-Data[1,]
-Data[2,]
-Data[1:3,]
-Data[1:3,4]
-Data[1:5, 1:3]
-Feeds<- which (Data[,9]) == 'bottle')
-Feeds<- which (Data[,9])  == 'bottle')
-Feeds<-which(Data[,9])  == 'bottle')
-Feeds<−which(Data[,9] == ‘bottle’)
-Feeds<-which(Data[,9] == ‘bottle’)
-# Feeds<- which(Data[,9] == ‘bottle’)
-Feeds<- which(Data[,9] == ‘bottle’)
-Feeds<- which(Data[,9] == ‘bottle’)
-Feeds <- which(Data[,9] == ‘bottle’)
-Feeds<-which(Data[,9]=='bottle')
-Feeds<-which(Data[,9] == 'bottle')
-Feeds <- which(Data[,9] == 'bottle')
-Feeds <- which (Data[,9] == 'bottle')
-Feeds <- which (Data[,9] == 'bottle')
-Feeds<- which(Data[9] == 'bottle')
-Feeds<- which(Data[,9] == 'bottle')
-berenMilk <− Data [ Feeds , ]
-Feeds <- which(Data[ ,9]) == 'bottle')
-Feeds<-which(Data[,9] == 'bottle')
-berenMilk<- Data[Feeds,]
-head(berenMilk)
-Feeds <− which(Data[,‘event’] == ‘bottle’)
-Feeds<-which(Data[,'event'] == 'bottle')
-Feeds<-which(Data[,'event'] ='bottle')
-Feeds<-which(Data[,'event'] = 'bottle')
-Feeds<-which(Data[,'event'] == 'bottle')
-Feeds<-which(Data[,event] == 'bottle')
-Feeds<-which(Data[,'event'] == 'bottle')
-Feeds<-which(Data[,'event'] == 'bottle')
-Feeds<-which(Data[,'event'] == 'bottle')
-Feeds<- which(Data[,'event'] == 'bottle')
-head(berenMilk)
-Feeds <-which(Data[,'event'] =='bottle'
-Feeds <-which(Data$event == 'bottle')
-Feeds <-which(Data$event=='bottle')
-dayID<- apply(Data,1,function(x)paste(x[1:3],collapse='-'))
-”2019−04−18”)
-”2019−04−18”)
-dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d",origin="2019-04-18")
-dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d", origin="2019-04-18")
-dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d", origin="2019-04-18")
-dateID<-sapply(dayID,as.Date, format=''%Y-%m-%d", origin="2019-04-18")
-dateID<-sapply(dayID,as.Date,format="%Y-%m-%d",origin="2019-04-18")
-Data$age<-dateID[which(Data$event=='birth')]
-head(Data)
-beren2<-Data
-beren3<-beren2[order(beren2$age),]
-write.csv(beren3,'beren_new.csv',quote=F,row.names=FALSE)

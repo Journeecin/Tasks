@@ -1,0 +1,285 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.73 (7892) x86_64-apple-darwin17.0]
+
+[Workspace restored from /Users/journeewheeler/.RData]
+[History restored from /Users/journeewheeler/.Rapp.history]
+
+> write.csv(beren3,'beren_new.csv',quote=F,row.names=FALSE)
+Error in is.data.frame(x) : object 'beren3' not found
+> beren2<-Data
+> beren3<-beren2[order(beren2$age),]
+Error in order(beren2$age) : argument 1 is not a vector
+> head(Data)
+  year month day     dotw start_hour start_minute end_hour end_minute
+1 2019     4  18 Thursday         11           53       NA         NA
+2 2019    10  18   Friday          7           50       NA         NA
+3 2019    10  18   Friday         10            0       NA         NA
+4 2019    10  18   Friday         12           20       NA         NA
+5 2019    10  18   Friday         14           25       NA         NA
+6 2019    10  18   Friday          8           20       NA         NA
+   event value units caregiver
+1  birth    NA             kch
+2    wet    NA              ap
+3    wet    NA              ap
+4    wet    NA              ap
+5    wet    NA              ap
+6 bottle   1.5    oz        ap
+> setwd('~/Desktop/Evolution/Evolution/Tasks/Task_02')
+> Data<- read.csv('http://jonsmitchell.com/data/beren.csv', stringsAsFactors=F)
+> length(Data)
+[1] 12
+> nrow(Data)
+[1] 1356
+> ncol(Data)
+[1] 12
+> colnames(Data)
+ [1] "year"         "month"        "day"          "dotw"        
+ [5] "start_hour"   "start_minute" "end_hour"     "end_minute"  
+ [9] "event"        "value"        "units"        "caregiver"   
+> head(Data)
+  year month day     dotw start_hour start_minute end_hour end_minute
+1 2019     4  18 Thursday         11           53       NA         NA
+2 2019    10  18   Friday          7           50       NA         NA
+3 2019    10  18   Friday         10            0       NA         NA
+4 2019    10  18   Friday         12           20       NA         NA
+5 2019    10  18   Friday         14           25       NA         NA
+6 2019    10  18   Friday          8           20       NA         NA
+   event value units caregiver
+1  birth    NA             kch
+2    wet    NA              ap
+3    wet    NA              ap
+4    wet    NA              ap
+5    wet    NA              ap
+6 bottle   1.5    oz        ap
+> Data[1,]
+  year month day     dotw start_hour start_minute end_hour end_minute
+1 2019     4  18 Thursday         11           53       NA         NA
+  event value units caregiver
+1 birth    NA             kch
+> Data[2,]
+  year month day   dotw start_hour start_minute end_hour end_minute event
+2 2019    10  18 Friday          7           50       NA         NA   wet
+  value units caregiver
+2    NA              ap
+> Data[1:3,]
+  year month day     dotw start_hour start_minute end_hour end_minute
+1 2019     4  18 Thursday         11           53       NA         NA
+2 2019    10  18   Friday          7           50       NA         NA
+3 2019    10  18   Friday         10            0       NA         NA
+  event value units caregiver
+1 birth    NA             kch
+2   wet    NA              ap
+3   wet    NA              ap
+> Data[1:3,4]
+[1] "Thursday" "Friday"   "Friday"  
+> Data[1:5, 1]
+[1] 2019 2019 2019 2019 2019
+> Feeds<-which(Data[,9] == 'bottle')
+> berenMilk<- Data[Feeds,]
+> head(berenMilk)
+   year month day     dotw start_hour start_minute end_hour end_minute
+6  2019    10  18   Friday          8           20       NA         NA
+7  2019    10  18   Friday         10           40       NA         NA
+8  2019    10  18   Friday         12           30       NA         NA
+9  2019    10  18   Friday         14           53       NA         NA
+20 2019    10  17 Thursday          9            8       NA         NA
+21 2019    10  17 Thursday         11            5       NA         NA
+    event value units caregiver
+6  bottle   1.5    oz        ap
+7  bottle   2.5    oz        ap
+8  bottle   2.0    oz        ap
+9  bottle   2.0    oz        ap
+20 bottle   3.0    oz      vona
+21 bottle   2.0    oz      vona
+> Feeds <-which(Data[,'event'] =='bottle'
++ Feeds <-which(Data$event=='bottle')
+Error: unexpected symbol in:
+"Feeds <-which(Data[,'event'] =='bottle'
+Feeds"
+> Feeds<-which(Data$event=='bottle')
+> dayID<- apply(Data,1,function(x)paste(x[1:3],collapse='-'))
+> dateID<-sapply(dayID,as.Date,format="%Y-%m-%d",origin="2019-04-18")
+> Data$age<-dateID[which(Data$event=='birth')]
+> head(Data)
+  year month day     dotw start_hour start_minute end_hour end_minute
+1 2019     4  18 Thursday         11           53       NA         NA
+2 2019    10  18   Friday          7           50       NA         NA
+3 2019    10  18   Friday         10            0       NA         NA
+4 2019    10  18   Friday         12           20       NA         NA
+5 2019    10  18   Friday         14           25       NA         NA
+6 2019    10  18   Friday          8           20       NA         NA
+   event value units caregiver   age
+1  birth    NA             kch 18004
+2    wet    NA              ap 18004
+3    wet    NA              ap 18004
+4    wet    NA              ap 18004
+5    wet    NA              ap 18004
+6 bottle   1.5    oz        ap 18004
+> beren2<-Data
+> beren3<-beren2[order(beren2$age),]
+> write.csv(beren3,'beren_new.csv',quote=F,row.names=FALSE)
+> Feeds<-which(beren3$event=="bottle")
+> avgMilk<-mean(beren3$value[Feeds]
++ avgMilk<-mean(beren3$value[Feeds])
+Error: unexpected symbol in:
+"avgMilk<-mean(beren3$value[Feeds]
+avgMilk"
+> avgMilk<-mean(beren3$value[Feeds]
++ avgFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],mean)
+Error: unexpected symbol in:
+"avgMilk<-mean(beren3$value[Feeds]
+avgFeed"
+2021-02-03 16:26:37.074 R[34185:2518366] -deltaZ is deprecated for NSEventTypeMagnify.  Please use -magnification.
+> avgFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],mean)
+> varFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],var)
+> totalFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],sum)
+> numFeeds<-tapply(beren3$value[Feeds],beren3$age[Feeds],length)
+> cor(beren3$value[Feeds]beren3$age[Feeds])
+Error: unexpected symbol in "cor(beren3$value[Feeds]beren3"
+> cor(beren3$value[Feeds],beren3$age[Feeds])
+[1] NA
+Warning message:
+In cor(beren3$value[Feeds], beren3$age[Feeds]) :
+  the standard deviation is zero
+> cor(beren3$value[Feeds],beren3$age[Feeds])
+[1] NA
+Warning message:
+In cor(beren3$value[Feeds], beren3$age[Feeds]) :
+  the standard deviation is zero
+> cor.test(beren3$value[Feeds],beren3$age[Feeds])
+
+	Pearson's product-moment correlation
+
+data:  beren3$value[Feeds] and beren3$age[Feeds]
+t = NA, df = 320, p-value = NA
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ NA NA
+sample estimates:
+cor 
+ NA 
+
+Warning message:
+In cor(x, y) : the standard deviation is zero
+> berenCor<-cor.test(eren3$value[Feeds],beren3$age[Feeds])
+Error in cor.test(eren3$value[Feeds], beren3$age[Feeds]) : 
+  object 'eren3' not found
+> berenCor<-cor.test(beren3$value[Feeds],beren3$age[Feeds])
+Warning message:
+In cor(x, y) : the standard deviation is zero
+> summary(berenCor)
+            Length Class  Mode     
+statistic   1      -none- numeric  
+parameter   1      -none- numeric  
+p.value     1      -none- numeric  
+estimate    1      -none- numeric  
+null.value  1      -none- numeric  
+alternative 1      -none- character
+method      1      -none- character
+data.name   1      -none- character
+conf.int    2      -none- numeric  
+> berenANOVA<-aov(beren3$value[Feeds]~beren3$caregiver[Feeds])
+> boxplot(beren3$value[Feeds]~beren3$caregiver[Feeds],xlab="who gave the bottle",ylab="amount of milk consumed (oz)")
+> ?par
+starting httpd help server ... done
+> par(las=1,mar=c(5,5,1,1),mgp=c(2,0.5,0),tck=-0.01)
+> par(las=1,mar=c(5,5,1,1),mgp=c(2,0.5,0),tck=-0.01)
+> plot(as.numeric(names(totalFeed)),totalFeed,type="b",pch=16,xlab="age in days",ylab="ounces of milk")
+> abline(h=mean(totalFeed),lty=2,col='red')
+Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
+  plot.new has not been called yet
+> abline(h=mean(totalFeed),lty=2,col='red')
+Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
+  plot.new has not been called yet
+> pdf(''r02b-totalMilkByDay.pdf'',height=4,width=4)
+Error: unexpected symbol in "pdf(''r02b"
+> pdf(''r02b-totalMilkByDay.pdf'',height=4,width=4)
+Error: unexpected symbol in "pdf(''r02b"
+> pdf('r02b-totalMilkByDay.pdf',height=4,width=4)
+> par(las=1,mar=c(5,5,1,1),mgp=c(2,0.5,0),tck=-0.01)
+> plot(as.numeric(names(totalFeed)),totalFeed,.type="b",pch=16,xlab="age in days",ylab="ounces of milk")
+Warning messages:
+1: In plot.window(...) : ".type" is not a graphical parameter
+2: In plot.xy(xy, type, ...) : ".type" is not a graphical parameter
+3: In axis(side = side, at = at, labels = labels, ...) :
+  ".type" is not a graphical parameter
+4: In axis(side = side, at = at, labels = labels, ...) :
+  ".type" is not a graphical parameter
+5: In box(...) : ".type" is not a graphical parameter
+6: In title(...) : ".type" is not a graphical parameter
+> abline(h=mean(totalFeed),lty=2,col='red')
+> dev.off()
+null device 
+          1 
+> source("http://jonsmitchell.com/code/plotFxn02b.R")
+> source("http://jonsmitchell.com/code/plotFxn02b.R")
+> unique(beren3$event) 
+ [1] "birth"                                  
+ [2] "wet"                                    
+ [3] "bottle"                                 
+ [4] "nap"                                    
+ [5] "caregiver_change"                       
+ [6] "bowel"                                  
+ [7] "dry"                                    
+ [8] "intro_highflow_nipples"                 
+ [9] "intro_sleeping_thru_night"              
+[10] "diaper"                                 
+[11] "tylenol"                                
+[12] "arrive"                                 
+[13] "temperature"                            
+[14] "intro_grass"                            
+[15] "skill_crawl_army"                       
+[16] "trait_mass"                             
+[17] "trait_length"                           
+[18] "trait_head_circum"                      
+[19] "skill_situp_partial"                    
+[20] "intro_solidfood_regularly"              
+[21] "intro_solidfood"                        
+[22] "amoxicilin"                             
+[23] "skill_pullup"                           
+[24] "intro_sleeping_nursery"                 
+[25] "trait_tooth_incisor_lower_right"        
+[26] "trait_tooth_incisor_lower_left"         
+[27] "solids"                                 
+[28] "skill_crawl_full"                       
+[29] "skill_pullup_regularly"                 
+[30] "trait_tooth_incisor_upper_right"        
+[31] "trait_tooth_incisor_upper_left"         
+[32] "trait_tooth_incisor_lateral_upper_right"
+[33] "trait_tooth_incisor_lateral_upper_left" 
+[34] "skill_step"                             
+[35] "skill_walking"                          
+[36] "predisolone"                            
+[37] "start_home_covid19"                     
+[38] "trait_tooth_incisor_lower_right_lateral"
+[39] "trait_tooth_incisor_lower_left_lateral" 
+[40] "trait_tooth_molar_lower_right"          
+[41] "trait_tooth_molar_lower_left"           
+[42] "trait_tooth_canine_lower_right"         
+[43] "trait_tooth_canine_lower_left"          
+[44] "trait_tooth_molar_upper_right"          
+[45] "trait_tooth_molar_upper_left"           
+[46] "skill_self_reference"                   
+[47] "stop_home_covid19"                      
+[48] "skill_sentence"                         
+[49] "skill_count"                            
+[50] "water"                                  
+> 

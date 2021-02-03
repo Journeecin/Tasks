@@ -10,12 +10,12 @@ Data[1,]
 Data[2,]
 Data[1:3,]
 Data[1:3,4]
-Data[1:5, 1
+Data[1:5, 1]
 Feeds<-which(Data[,9] == 'bottle')
 berenMilk<- Data[Feeds,]
 head(berenMilk)
 Feeds <-which(Data[,'event'] =='bottle'
-Feeds <-which(Data$event=='bottle')
+Feeds<-which(Data$event=='bottle')
 dayID<- apply(Data,1,function(x)paste(x[1:3],collapse='-'))
 dateID<-sapply(dayID,as.Date,format="%Y-%m-%d",origin="2019-04-18")
 Data$age<-dateID[which(Data$event=='birth')]

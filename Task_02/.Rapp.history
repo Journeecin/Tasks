@@ -1,68 +1,3 @@
-1:20
-pi:10
-15:1
-':'
-?':'
-seq(1,20)
-seq(0,10, by=0.5)
-my_seq(seq(5,10, length=30))
-my_seq<- seq(5,10,length=30)
-length()
-length(30)
-length(my_seq)
-1:length(my_seq)
-seq(along.with+my_seq)
-seq(along.with = my_seq)
-seq_along(my_seq)
-rep(0, times=40)
-rep(c(0,1,2), times=10)
-rep(c(0,1,2), each=10)
-swirl()
-x<-c(44, NA, 5, NA)
-x*3
-y<- rnorm(1000)
-z<- rep(NA, 1000)
-my_data<- sample(c(,y z), 100)
-my_data <- sample(c(y, z), 100)
-is.nA(my_data)
-is.na(my_data)
-my_na<- is.na(my_data)
-my_na
-my_data== Na
-my_data
-my_data == NA
-sum(my_data)
-sum(my_na)
-my_data
-0/0
-Inf-Inf
-x
-x[1:10]
-x[is.na(x)]
-y<- x[!is.na(x)]
-y
-y[y> 0]
-x[x>0]
-x[!is.na(x)&x>0]
-c(x[3,5,7])
-c(x[3:7])
-x[c(3,5,7)]
-x[0])
-(x[0])
-x[0]
-x[3000]
-x[c(-2, -10)]
-x[-c92,10)]
-x[-c(2,10)]
-vect2 <
-<
-vect2 <- c(11,2,NA)
-vect2<- c(foo=11,bar=2,norf=NA)
-(vect2)<- c(foo=11,bar=2,norf=NA)
-c(11,2,NA)
-x<- c(foo = 11, bar = 2, norf = NA)
-vect <- c(foo = 11, bar = 2, norf = NA)
-vect
 names(vect)
 vect2<- c(11, 2, NA)
 names(vect2)<- c("foo", "bar", "norf")
@@ -247,5 +182,70 @@ setwd(‘~/Desktop/Evolution/Evolution/Tasks/Task_02’)
 setwd(~/Desktop/Evolution/Evolution/Tasks/Task_02)
 source("/Users/journeewheeler/Documents/Assignment 2.R")
 cd ~/Desktop/Evolution/Tasks
+beren3<-beren2[order(beren2$age),]
+Data<- read.csv('http://jonsmitchell.com/data/beren.csv', stringsAsFactors=F)
+Feeds<-which(beren3$event=="bottle")
+write.csv(beren3,'beren_new.csv',quote=F,row.names=FALSE)
+beren2<-Data
+beren3<-beren2[order(beren2$age),]
+head(Data)
 setwd('~/Desktop/Evolution/Evolution/Tasks/Task_02')
 Data<- read.csv('http://jonsmitchell.com/data/beren.csv', stringsAsFactors=F)
+length(Data)
+nrow(Data)
+ncol(Data)
+colnames(Data)
+head(Data)
+Data[1,]
+Data[2,]
+Data[1:3,]
+Data[1:3,4]
+Data[1:5, 1]
+Feeds<-which(Data[,9] == 'bottle')
+berenMilk<- Data[Feeds,]
+head(berenMilk)
+Feeds <-which(Data[,'event'] =='bottle'
+Feeds <-which(Data$event=='bottle')
+Feeds<-which(Data$event=='bottle')
+dayID<- apply(Data,1,function(x)paste(x[1:3],collapse='-'))
+dateID<-sapply(dayID,as.Date,format="%Y-%m-%d",origin="2019-04-18")
+Data$age<-dateID[which(Data$event=='birth')]
+head(Data)
+beren2<-Data
+beren3<-beren2[order(beren2$age),]
+write.csv(beren3,'beren_new.csv',quote=F,row.names=FALSE)
+Feeds<-which(beren3$event=="bottle")
+avgMilk<-mean(beren3$value[Feeds]
+avgMilk<-mean(beren3$value[Feeds])
+avgMilk<-mean(beren3$value[Feeds]
+avgFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],mean)
+avgFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],mean)
+varFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],var)
+totalFeed<-tapply(beren3$value[Feeds],beren3$age[Feeds],sum)
+numFeeds<-tapply(beren3$value[Feeds],beren3$age[Feeds],length)
+cor(beren3$value[Feeds]beren3$age[Feeds])
+cor(beren3$value[Feeds],beren3$age[Feeds])
+cor(beren3$value[Feeds],beren3$age[Feeds])
+cor.test(beren3$value[Feeds],beren3$age[Feeds])
+berenCor<-cor.test(eren3$value[Feeds],beren3$age[Feeds])
+berenCor<-cor.test(beren3$value[Feeds],beren3$age[Feeds])
+summary(berenCor)
+berenANOVA<-aov(beren3$value[Feeds]~beren3$caregiver[Feeds])
+boxplot(beren3$value[Feeds]~beren3$caregiver[Feeds],xlab="who gave the bottle",ylab="amount of milk consumed (oz)")
+?par
+par(las=1,mar=c(5,5,1,1),mgp=c(2,0.5,0),tck=-0.01)
+par(las=1,mar=c(5,5,1,1),mgp=c(2,0.5,0),tck=-0.01)
+plot(as.numeric(names(totalFeed)),totalFeed,type="b",pch=16,xlab="age in days",ylab="ounces of milk")
+abline(h=mean(totalFeed),lty=2,col='red')
+abline(h=mean(totalFeed),lty=2,col='red')
+pdf(''r02b-totalMilkByDay.pdf'',height=4,width=4)
+pdf(''r02b-totalMilkByDay.pdf'',height=4,width=4)
+pdf('r02b-totalMilkByDay.pdf',height=4,width=4)
+par(las=1,mar=c(5,5,1,1),mgp=c(2,0.5,0),tck=-0.01)
+plot(as.numeric(names(totalFeed)),totalFeed,.type="b",pch=16,xlab="age in days",ylab="ounces of milk")
+abline(h=mean(totalFeed),lty=2,col='red')
+dev.off()
+source("http://jonsmitchell.com/code/plotFxn02b.R")
+source("http://jonsmitchell.com/code/plotFxn02b.R")
+unique(beren3$event)
+unique(beren3$event)

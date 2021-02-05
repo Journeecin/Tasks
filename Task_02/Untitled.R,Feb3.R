@@ -20,5 +20,10 @@ plot(as.numeric(names(totalFeed)),totalFeed,.type="b",pch=16,xlab="age in days",
 abline(h=mean(totalFeed),lty=2,col='red')
 dev.off()
 source("http://jonsmitchell.com/code/plotFxn02b.R")
-unique(beren3$event) 
-
+unique(beren3$event)
+Hypothesis 1:  If a baby takes naps during the day, then they will stay up thru the night. 
+- If a baby takes a number of naps will it affect the babaies sleeping through the night.
+Hypothesis 2: If a baby drinks milk, the baby will weight in mass. 
+- If a baby drinks a certain amount of milk, will it affect the babies weight in mass?
+Hypothesis 3: If a bottle has high flow nipples, it can affect the number of bowel movements during the day.
+- Will high flow nipples affect a baibes bowel movement over a period of time?

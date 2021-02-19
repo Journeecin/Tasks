@@ -25,7 +25,7 @@ ManySiblings<-replicate(1e3,length(intersect(Focus,makeBaby(Brenda,Alan)))/lengt
 quantile(ManySiblings)
 mean(ManySiblings)
 plot(density(ManySiblings),main="",xlab="proportion shared genes")
-You see a range of values in these analyses becuase your not only comparing the relationship between the grandparenrts and the parents but the number amount of siblings that Alan and Brenda are having to those relationships. 
+#You see a range of values in these analyses becuase your not only comparing the relationship between the grandparenrts and the parents but the number amount of siblings that Alan and Brenda are having to those relationships. 
 HWE<-function(p){
 aa<-p^2
 ab<-2*p*(1-p)
@@ -33,6 +33,7 @@ bb<-(1-p)^2
 return(c(aa=aa,ab=ab,bb=bb))
 }
 HWE(0.5)
+
 plot(1,1,type="n",xlim=c(0,1),ylim=c(0,1),xlab="freq. allele a",ylab="geno.freq")
 p<-eq(from=0,to=1,by=0.01)
 GenoFreq<-t(sapply(p,HWE))

@@ -1,0 +1,231 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.73 (7892) x86_64-apple-darwin17.0]
+
+[Workspace restored from /Users/journeewheeler/.RData]
+[History restored from /Users/journeewheeler/.Rapp.history]
+
+> install.packages("learnPopGen")
+--- Please select a CRAN mirror for use in this session ---
+trying URL 'https://cran.case.edu/bin/macosx/contrib/4.0/learnPopGen_1.0.4.tgz'
+Content type 'application/x-gzip' length 175740 bytes (171 KB)
+==================================================
+downloaded 171 KB
+
+
+The downloaded binary packages are in
+	/var/folders/d8/d397h_vs3n71c8ypvdq20kmh0000gn/T//RtmpUcN7sl/downloaded_packages
+> "library(learnPopGen)"
+[1] "library(learnPopGen)"
+> install.packages("coala")
+trying URL 'https://cran.case.edu/bin/macosx/contrib/4.0/coala_0.6.0.tgz'
+Content type 'application/x-gzip' length 2663509 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+
+The downloaded binary packages are in
+	/var/folders/d8/d397h_vs3n71c8ypvdq20kmh0000gn/T//RtmpUcN7sl/downloaded_packages
+> "library(coala)"
+[1] "library(coala)"
+> install.packages("phytools")
+trying URL 'https://cran.case.edu/bin/macosx/contrib/4.0/phytools_0.7-70.tgz'
+Content type 'application/x-gzip' length 2137373 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+
+The downloaded binary packages are in
+	/var/folders/d8/d397h_vs3n71c8ypvdq20kmh0000gn/T//RtmpUcN7sl/downloaded_packages
+> "library(phytools)"
+[1] "library(phytools)"
+> model<-coal_model(sample_size=5,loci_number=10,loci_length=500,ploidy=2)+
++ feat_mutation(10)+
++ feat_recombination(10)+
++ sumstat_trees()+
++ sumstat_nucleotide_div()
+Error in coal_model(sample_size = 5, loci_number = 10, loci_length = 500,  : 
+  could not find function "coal_model"
+> install.packages("learnPopGen")
+trying URL 'https://cran.case.edu/bin/macosx/contrib/4.0/learnPopGen_1.0.4.tgz'
+Content type 'application/x-gzip' length 175740 bytes (171 KB)
+==================================================
+downloaded 171 KB
+
+
+The downloaded binary packages are in
+	/var/folders/d8/d397h_vs3n71c8ypvdq20kmh0000gn/T//RtmpUcN7sl/downloaded_packages
+> library(learnPopGen)
+> install.packages("coala")
+trying URL 'https://cran.case.edu/bin/macosx/contrib/4.0/coala_0.6.0.tgz'
+Content type 'application/x-gzip' length 2663509 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+
+The downloaded binary packages are in
+	/var/folders/d8/d397h_vs3n71c8ypvdq20kmh0000gn/T//RtmpUcN7sl/downloaded_packages
+> library(coala)
+> install.packages("phytools")
+trying URL 'https://cran.case.edu/bin/macosx/contrib/4.0/phytools_0.7-70.tgz'
+Content type 'application/x-gzip' length 2137373 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+
+The downloaded binary packages are in
+	/var/folders/d8/d397h_vs3n71c8ypvdq20kmh0000gn/T//RtmpUcN7sl/downloaded_packages
+> library(phytools)
+Loading required package: ape
+Loading required package: maps
+> model<-coal_model(sample_size=5,loci_number=10,loci_length=500,ploidy=2)+
++ feat_mutation(10)+
++ feat_recombination(10)+
++ sumstat_trees()+
++ sumstat_nucleotide_div()
+> stats<-simulate(model,nsim=1)
+> Diversity<-stats$pi
+> Nloci<-length(stats$trees)
+> t1<-read.tree(text=stats$trees[[1]][1])
+> plot(t1)
+> axisPhylo()
+> Agel<-max(nodeHeights(t1))
+> t2<-read.tree(text=stats$trees[[2]][1])
+> plot(t2)
+> par(mfrow=c(1,2))
+> plot(t1)
+> axisPhylo()
+> plot(t2)
+> axisPhylo()
+> compare.chronograms(t1,t2)
+> t1_1<-read.tree(text=stats$trees[[1]][1])
+> t1_2<-read.tree(text=stats$trees[[1]][2])
+> compare.chronograms(t1_1,t1_2)
+Warning messages:
+1: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+2: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+3: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+4: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+5: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+6: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+7: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+8: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+9: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+> t1_1<-read.tree(text=stats$trees[[1]][1])
+> t1_2<-read.tree(text=stats$trees[[1]][2])
+> compare.chronograms(t1_1,t1_2)
+Warning messages:
+1: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+2: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+3: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+4: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+5: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+6: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+7: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+8: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+9: In arrows(T1$xx[i], T1$yy[i], T2$xx[i], T2$yy[i], lwd = 2, col = if (T1$xx[i] >  :
+  zero-length arrow is of indeterminate angle and so skipped
+> for(locus in 1:Nloci)
++ ntrees<-length(stats$trees[[locus]])
+> for(n in 1:ntrees){
++ if(locus==1&&n==1){
++ 	outPhy<-read.tree(text=stats$tree[[locus]][n])
++ }
++ else{
++ outPhy<-ape:::c.phylo(outPhy,read.tree(text=stats$trees[[locus]][n]))
++ }
++ }
+Error in ape:::c.phylo(outPhy, read.tree(text = stats$trees[[locus]][n])) : 
+  object 'outPhy' not found
+> for(locus in 1:Nloci)
++ ntrees<-length(stats$trees[[locus]])
+> for(n in 1:ntrees){
++ if(locus==1&&n==1){
++ outPhy<-read.tree(text=stats$tree[[locus]][n])
++ }
++ else{
++ outPhy<-ape:::c.phylo(outPhy,read.tree(text=stats$trees[[locus]][n]))
++ }
++ }
+Error in ape:::c.phylo(outPhy, read.tree(text = stats$trees[[locus]][n])) : 
+  object 'outPhy' not found
+> for(locus in 1:Nloci)
++ ntrees<-length(stats$trees[[locus]])
+> for(n in 1:ntrees){
++ if(locus==1&&n==1){
++ outPhy<-read.tree(text=stats$tree[[locus]][n])
++ }
++ else{
++ outPhy<-ape:::c.phylo(outPhy,read.tree(text=stats$trees[[locus
++ ]][n]))
++ }
++ }
+Error in ape:::c.phylo(outPhy, read.tree(text = stats$trees[[locus]][n])) : 
+  object 'outPhy' not found
+> for(locus in 1:Nloci)
++ ntrees<-length(stats$trees[[locus]])
+> for(n in 1:ntrees){
++ if(locus==1&&n==1){
++ outPhy<-read.tree(text=stats$trees[[locus]][n])
++ }
++ else{
++ outPhy<-ape:::c.phylo(outPhy,read.tree(text=stats$trees[[locus
++ ]][n]))
++ }
++ }
+Error in ape:::c.phylo(outPhy, read.tree(text = stats$trees[[locus]][n])) : 
+  object 'outPhy' not found
+> for(locus in 1:Nloci){
++ ntrees<-length(stats$trees[[locus]])
++ for(n in 1:ntrees){
++ if(locus==1&&n==1){
++ outPhy<-read.tree(text=stats$trees[[locus]][n])
++ }
++ else{
++ outPhy<-ape:::c.phylo(outPhy,read.tree(text=stats$trees[[locus]][n]))
++ }
++ }
++ }
+> par(mfrow=c(1,1))
+> densityTree(outPhy)
+> model3<-coal_model(10,50)+
++ feat_mutation(par_prior("theta",sample.int(100,1)))+
++ sumstat_nucleotide_div()
+> stats<-simulate(model3,nsim=40)
+> mean_pi<-sapply(stats,function(x)mean(x$pi))
+> theta<-sapply(stats,function(x)x$pars[["theta"]])
+> 

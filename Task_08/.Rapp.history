@@ -1,0 +1,250 @@
+dat=tmp$data
+brownFit<-fitContinous(phy,dat[,"wingL"],SE=NA,control=list(niter=50),ncores=2)
+brownFit<-fitContinuous(phy,dat[,"wingL"],SE=NA,control=list(niter=50),ncores=2)
+print(names(brownFit))
+print(brownfit)
+print(brownFit)
+flik=brownFit$lik
+print(argn(flik))
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE***/n",sep=="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA,model=models[m],bounds=lists(SE=c(0,0.5)),ncores=2)
+print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL
+}
+names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-models
+delta_aic<-function(x)x-x[which(x==min(x))]
+daic=delta_aic(aic)
+cat("/n/n/n/t/t/t/t***MODEL COMPARISON: ",trait,"***/n",sep="")
+cat("/tdelta-AIC values for models assuming no measurement error /t/t/t/t zero indicates the best model /n/n")
+print(daic,digits=2)
+daic.se=delta_aic(aic.se)
+cat("/n/n/n/n/t/t/t/t***MODEL COMPARISON:",trait,"***/n",sep="")
+cat("/t/t delta-AIC values for model estimating SE /t/t/t/t zero indicates the best model /n/n/")
+print(daic.se,digits=2)
+cat("/n/n/n")
+re_aicc=rbind(aic,aic.se,daic,daic.se)
+rownames(res_aicc)=c("AICc","AICc_SE","dAICc","dAICc_SE")
+return(res_aicc)
+}
+res=fitGeospiza("wingL")
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE*** /n",sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA,model=models[m],bounds=lists(SE=c(0,0.5)),ncores=2)
+print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL
+}
+names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-models
+delta_aic<-function(x)x-x[which(x==min(x))]
+daic=delta_aic(aic)
+cat("/n/n/n/t/t/t/t***MODEL COMPARISON: ",trait,"***/n",sep="")
+print(daic,digits=2)
+daic.se=delta_aic(aic.se)
+install.packages("geiger")
+library(geiger)
+install.packages("picante")
+library(picante)
+svlData<-read.csv("https://jonsmitchell.com/data/svl.csv",stringsAsFactors=F,row.names=1)
+geo=get(data(geospiza))
+tmp=treedata(geo$phy,geo$dat)
+phy=tmp$phy
+dat=tmp$data
+brownFit<-fitContinuous(phy,dat[,"wingL"],SE=NA,control=list(niter=50),ncores=2)
+print(names(brownFit))
+print(brownFit)
+flik=brownFit$lik
+print(argn(flik))
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE*** /n",sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA,model=models[m],bounds=lists(SE=c(0,0.5)),ncores=2)
+print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL
+}
+names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-models
+delta_aic<-function(x)x-x[which(x==min(x))]
+daic=delta_aic(aic)
+cat("/n/n/n/t/t/t/t***MODEL COMPARISON: ",trait,"***/n",sep="")
+cat("/tdelta-AIC values for models assuming no measurement error /t/t/t/t zero indicates the best model /n/n")
+print(daic,digits=2)
+daic.se=delta_aic(aic.se)
+cat("/n/n/n/n/t/t/t/t***MODEL COMPARISON:",trait,"***/n",sep="")
+cat("/t/t delta-AIC values for model estimating SE /t/t/t/t zero indicates the best model /n/n/")
+print(daic.se,digits=2)
+cat("/n/n/n")
+re_aicc=rbind(aic,aic.se,daic,daic.se)
+rownames(res_aicc)=c("AICc","AICc_SE","dAICc","dAICc_SE")
+return(res_aicc)
+}
+res=fitGeospiza("wingL")
+flik=brownFit$lik
+print(argn(flik))
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE*** /n",sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA,model=models[m],bounds=list(SE=c(0,0.5)),ncores=2)
+print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL
+}
+names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-models
+delta_aic<-function(x)x-x[which(x==min(x))]
+daic=delta_aic(aic)
+cat("/n/n/n/t/t/t/t***MODEL COMPARISON: ",trait,"***/n",sep="")
+cat("/tdelta-AIC values for models assuming no measurement error /t/t/t/t zero indicates the best model /n/n")
+print(daic,digits=2)
+daic.se=delta_aic(aic.se)
+cat("/n/n/n/n/t/t/t/t***MODEL COMPARISON:",trait,"***/n",sep="")
+cat("/t/t delta-AIC values for model estimating SE /t/t/t/t zero indicates the best model /n/n/")
+print(daic.se,digits=2)
+cat("/n/n/n")
+re_aicc=rbind(aic,aic.se,daic,daic.se)
+rownames(res_aicc)=c("AICc","AICc_SE","dAICc","dAICc_SE")
+return(res_aicc)
+}
+res=fitGeospiza("wingL")
+print(res)
+res=fitGeospiza("wingL")
+print(res)
+flik=brownFit$lik
+print(argn(flik))
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE*** /n",sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA,model=models[m],bounds=list(SE=c(0,0.5)),ncores=2)
+print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL
+}
+aic=numeric(length(models))
+lnl=numeric(length(models))
+for(m in 1:length(models)){
+cat("\n\n\n\n\t*** ", paste(toupper(summaries[m]),": fitting ", sep=""), models[m],
+" *** \n", sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=0,model=models[m], ncores=2)
+print(tmp)
+aic[m]=tmp$opt$aicc
+lnl[m]=tmp$opt$lnL
+}
+names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-models
+delta_aic<-function(x)x-x[which(x==min(x))]
+daic=delta_aic(aic)
+cat("/n/n/n/t/t/t/t***MODEL COMPARISON: ",trait,"***/n",sep="")
+cat("/tdelta-AIC values for models assuming no measurement error /t/t/t/t zero indicates the best model /n/n")
+print(daic,digits=2)
+daic.se=delta_aic(aic.se)
+cat("/n/n/n/n/t/t/t/t***MODEL COMPARISON:",trait,"***/n",sep="")
+cat("/t/t delta-AIC values for model estimating SE /t/t/t/t zero indicates the best model /n/n/")
+print(daic.se,digits=2)
+cat("/n/n/n")
+re_aicc=rbind(aic,aic.se,daic,daic.se)
+rownames(res_aicc)=c("AICc","AICc_SE","dAICc","dAICc_SE")
+return(res_aicc)
+}
+res=fitGeospiza("wingL")
+print(res)
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE*** /n",sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA, model=models[m],bounds=list(SE=c(0,0.5)), ncores=2)print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL
+flik=brownFit$lik
+print(argn(flik))
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("/n/n/n/n/t***",paste(toupper(summaries[m]),":fitting",sep=""),models[m],"with SE*** /n",sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA, model=models[m],bounds=list(SE=c(0,0.5)), ncores=2)print(tmp)
+flik=brownFit$lik
+print(argn(flik))
+fitGeospiza=function(trait=c("wingL","tarsusL","culmenL","beakD","gonysW")){
+trait=match.arg(trait,c("wingL","tarsusL","culmenL","beakD","gonysW"))
+models=c("BM","OU","EB","white")
+summaries=c("diffusion","Ornstein-Uhlenbeck","early burst","white noise")
+aic.se=numeric(length(models))
+lnl.se=numeric(length(models))
+for(m in 1:length(models)){
+cat("\n\n\n\n\t*** ", paste(toupper(summaries[m]),": fitting ", sep=""), models[m]," with SE *** \n", sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=NA, model=models[m],bounds=list(SE=c(0,0.5)), ncores=2)
+print(tmp)
+aic.se[m]=tmp$opt$aicc
+lnl.se[m]=tmp$opt$lnL}
+aic=numeric(length(models))
+lnl=numeric(length(models))
+for(m in 1:length(models)){
+cat("\n\n\n\n\t*** ", paste(toupper(summaries[m]),": fitting ", sep=""), models[m]," *** \n", sep="")
+tmp=fitContinuous(phy,dat[,trait],SE=0,model=models[m], ncores=2)
+print(tmp)
+aic[m]=tmp$opt$aicc
+lnl[m]=tmp$opt$lnL
+}
+names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-models
+delta_aic<-function(x)x-x[which(x==min(x))]
+daic=delta_aic(aic)
+cat("/n/n/n/t/t/t/t***MODEL COMPARISON: ",trait,"***/n",sep="")
+cat("/tdelta-AIC values for models assuming no measurement error /t/t/t/t zero indicates the best model /n/n")
+print(daic,digits=2)
+daic.se=delta_aic(aic.se)
+cat("/n/n/n/n/t/t/t/t***MODEL COMPARISON:",trait,"***/n",sep="")
+cat("/t/t delta-AIC values for model estimating SE /t/t/t/t zero indicates the best model /n/n/")
+print(daic.se,digits=2)
+cat("/n/n/n")
+res_aicc=rbind(aic,aic.se,daic,daic.se)
+rownames(res_aicc)=c("AICc","AICc_SE","dAICc","dAICc_SE")
+return(res_aicc)
+}
+res=fitGeospiza("wingL")
+print(res)
+lambda<-fitContinuous(phy,dat,model=c("lambda"))
+BM<-fitContinuous(phy,dat,model=c("BM"))
+nos<-fitContinuous(phy,dat,model=c("White"))
+nos<-fitContinuous(phy,dat,model=c("white"))
+lambda$opt$aicc
+BM$opt$aicc
+lambda$opt$aicc
+nos$opt$aicc
+BM
+lambda
+nos
+?fastAnc
+?fitContinuous
+?fastAnc
